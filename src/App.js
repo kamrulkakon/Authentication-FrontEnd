@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Success from './pages/Success';
 import Navbar from './components/auth/Navbar';
 
 // Create a theme instance
@@ -44,6 +45,14 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route
+            path="/success"
+            element={
+              <ProtectedRoute>
+                <Success />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/"
             element={
